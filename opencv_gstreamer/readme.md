@@ -2,8 +2,11 @@ According to: https://github.com/Dorozhko-Anton/ComputerVisionStreams/tree/main/
 
 # Step to run the docker
 docker build -t gstreamer:base .
+
 export DISPLAY=:0
+
 xhost +
+
 docker run -it --rm --net=host --gpus all -e DISPLAY=$DISPLAY -p 8888:8888 --device /dev/snd -v /tmp/.X11-unix/:/tmp/.X11-unix -v $PWD:/notebooks/ gstreamer:base
 __________
 Esta parte deve dar erro em: --gpus all
