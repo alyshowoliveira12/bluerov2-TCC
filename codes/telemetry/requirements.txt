@@ -1,0 +1,13 @@
+annotated-types
+attrs ok
+future
+lxml ok
+numpy
+pillow ok
+pyarrow 
+pydantic
+pydantic_core ok
+pymavlink
+rerun-sdk
+scipy
+typing_extensions

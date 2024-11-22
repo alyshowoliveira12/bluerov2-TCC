@@ -18,5 +18,8 @@ docker exec -it $(docker ps -q -f ancestor=gstreamer:base) /bin/bash
 
 Ou este sugerido pelo chat gpt:
 
-docker run -it --rm --net=host -e DISPLAY=$DISPLAY -p 8888:8888 --device /dev/snd -v /tmp/.X11-unix/:/tmp/.X11-unix -v $PWD:/notebooks/ gstreamer:base
+docker run -it --net=host -e DISPLAY=$DISPLAY -p 8888:8888 --device /dev/snd -v /tmp/.X11-unix/:/tmp/.X11-unix -v $PWD:/notebooks/ gstreamer:base
+
+
+docker run -it -v /home/alysson/bluerov2-TCC/codes:/codes gstreamer:base
 

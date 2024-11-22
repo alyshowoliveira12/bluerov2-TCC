@@ -8,7 +8,7 @@ cd opencv-python-${OPENCV_VER}
 export ENABLE_CONTRIB=0
 export ENABLE_HEADLESS=1
 # We want GStreamer support enabled.
-export CMAKE_ARGS="-DWITH_GSTREAMER=ON"
+export CMAKE_ARGS="-DWITH_GSTREAMER=ON -DWITH_QT=OFF -DWITH_GTK=0N"
 python3 -m pip wheel . --verbose
 
 # Install OpenCV

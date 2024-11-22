@@ -1,0 +1,87 @@
+Histórico de Alterações começando do final:
+
+instalar os pacotes relacionados ao GTK:
+apt-get update && apt-get install -y libgtk2.0-dev libgtk-3-dev pkg-config
+verifique se a opção WITH_GTK=ON está incluída no arquivo CMakeLists.txt.
+
+Erro com avdec_h264:
+
+find / -name "libstdc++.so.6.0.32" 2>/dev/null
+find / -name "libstdc++.so.*" 2>/dev/null
+Ver o que tem acima de .28
+ln -sf /root/miniconda3/lib/libstdc++.so.6.0.33 /root/miniconda3/lib/libstdc++.so.6
+export LD_LIBRARY_PATH=/root/miniconda3/lib:$LD_LIBRARY_PATH
+Verificar:
+ldd /root/miniconda3/lib/python3.9/site-packages/cv2/cv2*.so | grep libstdc++.so.6
+
+pycairo
+apt-get update && apt-get install -y libcairo2 libcairo2-dev
+pip install pycairo
+
+pygobject
+apt-get update && apt-get install -y \
+    libcairo2-dev \
+    libgirepository1.0-dev \
+    gobject-introspection \
+    gir1.2-gtk-3.0 \
+    pkg-config \
+    build-essential
+pip install PyGObject
+
+apt-get update
+apt-get install software-properties-common
+apt-get update
+add-apt-repository ppa:ubuntu-toolchain-r/test
+apt-get update
+apt-get install -y gcc-11 g++-11 libstdc++-11-dev
+
+libffi está desatualizada ou incompatível com libgobject
+apt-get update && apt-get install -y libffi-dev libffi7 libgirepository1.0-dev
+dpkg -l | grep libffi
+cp /usr/lib/x86_64-linux-gnu/libffi.so.7 /root/miniconda3/lib/
+ln -sf /root/miniconda3/lib/libffi.so.7 /root/miniconda3/lib/libffi.so.6
+
+
+cmake -D CMAKE_BUILD_TYPE=Release \
+      -D CMAKE_INSTALL_PREFIX=/usr/local \
+      -D WITH_GTK=ON \
+      -D OPENCV_GENERATE_PKGCONFIG=ON ..
+
+
+
+
+
+
+
+___
+annotated-types
+attrs
+future
+lxml
+numpy
+pillow
+pyarrow
+pydantic
+pydantic_core
+pymavlink
+rerun-sdk
+scipy
+typing_extensions
+___
+RUN apt-get update && apt-get install -y libffi7
+LD_LIBRARY_PATH=/usr/lib/x86_64-linux-gnu:$LD_LIBRARY_PATH python3
+
+______________________________________
+
+1-Alterar o começo do dockerfile
+FROM ubuntu:20.04
+ENV PATH="/root/miniconda3/bin:${PATH}"
+ARG PATH="/root/miniconda3/bin:${PATH}"
+
+ENV DEBIAN_FRONTEND=noninteractive
+RUN apt-get update && apt-get install -y tzdata && \
+    echo "America/Sao_Paulo" > /etc/timezone && \
+    dpkg-reconfigure -f noninteractive tzdata
+ENV DEBIAN_FRONTEND=dialog
+
+2-

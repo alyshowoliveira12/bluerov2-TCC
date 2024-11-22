@@ -1,0 +1,15 @@
+annotated-types
+attrs
+future
+lxml
+numpy
+pillow
+pyarrow
+pycairo
+pydantic
+pydantic_core
+PyGObject
+pymavlink
+rerun-sdk
+scipy
+typing_extensions
