@@ -24,7 +24,7 @@ the_connection.mav.command_long_send(
     the_connection.target_component,  # ID do componente alvo
     mavutil.mavlink.MAV_CMD_COMPONENT_ARM_DISARM,  # Comando de armar/desarmar
     0,  # Confirmar comando
-    0,  # Parâmetro para armar (1)
+    0,  # Parâmetro para desarmar (0)
     0,  # 0: sujeito a verificações de segurança, 21196: força armar/desarmar
     0, 0, 0, 0, 0  # Outros parâmetros não utilizados aqui
 )
