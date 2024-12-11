@@ -37,7 +37,7 @@ python arm.py --conexao udp:localhost:14445
 ```
 
 ## **3. Movimento NED**
-Utilize o script `ned_movement.py` para enviar um único comando NED ao BlueROV2.
+Utilize o script `ned_movement.py` para enviar um único comando NED ao BlueROV2. NECESSITA DE UM SISTEMA DE LOCALIZAÇÃO.
 
 **Comando:**
 ```bash
