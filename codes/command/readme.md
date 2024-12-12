@@ -25,16 +25,6 @@ python arm.py --conexao <tipo_de_conexao>
 ```bash
 python arm.py --conexao udp:localhost:14445
 ```
-## **2. Armar/Desarmar**
-Utilize o script `arm.py` para armar e `disarm.py` para desarmar.
-
-**Comando:**
-```bash
-python arm.py --conexao <tipo_de_conexao>
-```
-```bash
-python arm.py --conexao udp:localhost:14445
-```
 
 ## **3. Movimento NED**
 Utilize o script `ned_movement.py` para enviar um único comando NED ao BlueROV2. **NECESSITA DE UM SISTEMA DE LOCALIZAÇÃO**.
